@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="viewmodel" type="com.example.sutocnoru_test.presentation.MainActivityViewModel"/>
+    </data>
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".presentation.MainActivity">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+            <LinearLayout
+                    android:id="@+id/rejectLayout"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <ImageButton
+                        android:id="@+id/imageButtonClose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_close_black_24dp"/>
+                <TextView
+                        android:id="@+id/clearLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Отзыв о проживании"
+                        android:textSize="18sp"
+                        android:textColor="@android:color/background_dark"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/timelayout"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <ImageButton
+                        android:id="@+id/imageButtonHelp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_info_outline_black_24dp"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ldata"
+                            android:textSize="16sp"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="bron"
+                            android:textSize="14sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+                <TextView
+                        android:id="@+id/totalMark"
+                        android:text="0.0"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:ems="1"
+                        android:singleLine="true" android:background="@color/mark_color"
+                        android:textColor="@android:color/background_light"/>
+                <TextView
+                        android:id="@+id/totalMarkLabel"
+                        android:textSize="18sp"
+                        android:textColor="@android:color/background_dark"
+                        android:text="Средняя оценка"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:layout_weight="1"
+                          android:textSize="16sp"
+                          android:textColor="@android:color/background_dark"
+                          android:text="Соответствие фото"/>
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:stepSize="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:layout_weight="1"
+                          android:textSize="16sp"
+                          android:textColor="@android:color/background_dark"
+                          android:text="Расположение"/>
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:stepSize="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:layout_weight="1"
+                          android:textSize="16sp"
+                          android:textColor="@android:color/background_dark"
+                          android:text="Чистота"/>
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:stepSize="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:layout_weight="1"
+                          android:textSize="16sp"
+                          android:textColor="@android:color/background_dark"
+                          android:text="Обслуживание"/>
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:stepSize="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:layout_weight="1"
+                          android:textSize="16sp"
+                          android:textColor="@android:color/background_dark"
+                          android:text="Удобство номера"/>
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:stepSize="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:layout_gravity="center"
+                          android:textSize="16sp"
+                          android:textColor="@android:color/background_dark"
+                          android:text="Цена - качество\nили в две строки"/>
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/RatingBar"
+                            android:numStars="5"
+                            android:stepSize="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/dignities"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/background_dark"
+                    android:text="Достоинства"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <EditText
+                    android:id="@+id/dignitiesEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    android:text="Что вам понравилось"/>
+            <TextView
+                    android:id="@+id/disadvantage"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/background_dark"
+                    android:text="Достоинства"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <EditText
+                    android:id="@+id/disadvantageEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    android:text="Что вам не понравилось"/>
+            <TextView
+                    android:id="@+id/loadLabel"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/background_dark"
+                    android:text="Фотографии"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:text="Добавить ещё"
+                    android:textColor="@color/button_color"/>
+            <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/RecensionButton"
+                    android:text="Оставить отзыв"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
+
