@@ -34,6 +34,7 @@ class MainApplication : Application(), HasAndroidInjector{
         return appResources
     }
 
+    fun getAppComponent() = appComponent
     companion object {
         lateinit var instance: MainApplication
             private set

@@ -19,9 +19,8 @@ import java.util.concurrent.TimeUnit
 import okhttp3.logging.HttpLoggingInterceptor
 
 
-@Module
+@Module(includes = [OkHttpClientModule::class])
 class NetworkModule {
-    private var okHttpClient: OkHttpClient = OkHttpClient()
     @Provides
     @Singleton
     fun provideGson(): Gson {
@@ -29,18 +28,6 @@ class NetworkModule {
         gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
         return gsonBuilder.create()
     }
-
-    @Provides
-    @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
-        val interceptor = HttpLoggingInterceptor()
-        interceptor.level = HttpLoggingInterceptor.Level.BODY
-        okHttpClient =
-            OkHttpClient.Builder().addInterceptor(interceptor).connectTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
-                .readTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS).build()
-        return okHttpClient
-    }
-
     @Provides
     @Singleton
     fun provideRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
